@@ -31,7 +31,7 @@ export default function Navbar() {
       className={ `font-sans  fixed top-0 left-0 w-full flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 transition-all duration-500 z-[9999]
         ${isScrolled ? "bg-white/50 shadow-md text-gray-800 backdrop-blur-lg py-3" : "bg-transparent text-white py-5"}`}
     >
-      {/* Logo */}
+      
       <div className="flex gap-2 items-center ">
         {/*<img src="/Logo.png" alt="logo" width={40} height={20}/>*/}
       <h2
@@ -51,7 +51,7 @@ export default function Navbar() {
       </h2>
       </div>
 
-      {/* Desktop Nav */}
+  
       <div className="hidden md:flex items-center gap-10">
         {navLinks.map((link, i) => (
           <NavLink
@@ -66,7 +66,7 @@ export default function Navbar() {
         ))}
       </div>
 
-      {/* Right Section */}
+  
       <div className="hidden md:flex items-center gap-6">
         <h2
           className={` ${
@@ -85,7 +85,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu Button */}
+  
       <div className="flex md:hidden items-center gap-3">
         <FontAwesomeIcon
           icon={faBars}
@@ -96,7 +96,7 @@ export default function Navbar() {
         />
       </div>
 
-      {/* Mobile Menu */}
+    
       <div
         className={`fixed top-0 left-0 w-full h-screen bg-white text-base flex flex-col md:hidden items-center justify-center gap-6 font-medium text-gray-800 transition-all duration-500 ${
           isMenuOpen ? "translate-x-0" : "-translate-x-full"

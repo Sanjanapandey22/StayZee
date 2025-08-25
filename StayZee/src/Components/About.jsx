@@ -22,11 +22,11 @@ export default function About() {
         />
       </div>
 
-      {/* Right Side Features */}
+    
       
       
 
-        {/* Card 1 */}
+        
         <div className="w-full md:w-1/2 flex flex-col gap-6">
         <div className="flex items-start gap-4 bg-white p-5 rounded-2xl  hover:shadow-sm transition duration-300 cursor-pointer">
           <div className="border-2 border-rose-600 p-4 rounded-4xl">
@@ -45,7 +45,7 @@ export default function About() {
           </div>
         </div>
 
-        {/* Card 2 */}
+    
         <div className="flex items-start gap-4 bg-white p-5 rounded-2xl  hover:shadow-sm transition duration-300 cursor-pointer">
           <div className="border-2 border-rose-600 p-4 rounded-4xl">
             <FontAwesomeIcon
@@ -63,7 +63,7 @@ export default function About() {
           </div>
         </div>
 
-        {/* Card 3 */}
+        
         <div className="flex items-start gap-4 bg-white p-5 rounded-2xl hover:shadow-sm transition duration-300 cursor-pointer">
           <div className="border-2 border-rose-600 p-4 rounded-4xl">
             <FontAwesomeIcon

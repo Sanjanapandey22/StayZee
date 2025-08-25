@@ -16,10 +16,10 @@ export default function Home() {
     <div className="w-full overflow-x-hidden">
       <Hero />
 
-      {/* Hotels + Villas Section */}
+    
       <div className="">
       <div className="flex flex-col justify-center items-center px-4 sm:px-8 md:px-16 lg:px-24">
-        {/* Main Title */}
+        
         <h2 className="text-3xl font-semibold text-gray-900 text-center mt-10">
           Pick What You Love
         </h2>
@@ -29,7 +29,7 @@ export default function Home() {
           we’ve got the perfect place waiting for you.
         </p>
 
-        {/* Hotels Section */}
+  
         <div className="w-full mt-12">
           <h2 className="text-2xl font-bold text-gray-800 mb-6 ml-6 text-left">
             Luxurious Hotels
@@ -41,7 +41,7 @@ export default function Home() {
            <p>Explore More</p> 
            <FontAwesomeIcon icon={faArrowRight}  className="text-xl py-2.5 px-2 border-2 text-gray-400 rounded-full"/></div>
 
-        {/* Villas + Airbnb Section */}
+      
         <div className="w-full mt-5">
           <h2 className="text-2xl font-bold text-gray-800 mb-6 ml-6 text-left">
             Villas & Airbnb Stays

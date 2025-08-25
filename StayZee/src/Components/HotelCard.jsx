@@ -21,7 +21,7 @@ export default function HotelCard({ rooms }) {
           key={room.id}
           className="bg-white shadow-lg rounded-4xl overflow-hidden hover:scale-105 transition-transform duration-300 relative"
         >
-          {/* Room Image */}
+          
           <div className="relative">
             <img
               src={room.image}
@@ -29,7 +29,7 @@ export default function HotelCard({ rooms }) {
               className="w-full h-56 object-cover"
             />
 
-            {/* Wishlist Button */}
+            
             <button
               onClick={() => toggleWishlist(room.id)}
               className="absolute top-3 right-3 bg-white rounded-full p-2 shadow-md hover:scale-110 transition-transform duration-200"
@@ -45,7 +45,7 @@ export default function HotelCard({ rooms }) {
             </button>
           </div>
 
-          {/* Room Details */}
+          
           <div className="p-4">
             <h3 className="text-xl font-semibold text-gray-900">{room.name}</h3>
             <p className="text-gray-600">{room.location}</p>

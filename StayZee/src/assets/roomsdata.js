@@ -1,9 +1,9 @@
 
 
-// src/data/roomsData.js
+
 
 const roomsData = [
-  // 🏨 Hotels
+  //  Hotels
   {
     id: 1,
     name: "Skyline Premium Suite",
@@ -49,7 +49,7 @@ const roomsData = [
     reviews: 75,
   },
 
-  // 🏡 Villas & Airbnb Stays
+  //  Villas & Airbnb Stays
   {
     id: 5,
     name: "Luxury Beachfront Villa",

@@ -14,7 +14,7 @@ export default function Hero() {
 
   return (
     <div className="relative h-screen w-full overflow-hidden z-0">
-      {/* Fullscreen video */}
+  
       <video
         className="absolute top-0 left-0 w-full h-full object-cover"
         autoPlay
@@ -26,27 +26,27 @@ export default function Hero() {
         Your browser does not support the video tag.
       </video>
 
-      {/* Hazy overlay */}
+  
       <div className="absolute top-0 left-0 w-full h-full bg-black/50 backdrop-grayscale-25"></div>
 
-      {/* Content above video */}
+      
       <div className="relative z-10 mt-7">
        
         <Navbar />
         
-        {/* Left-aligned hero content */}
+        
         <div className="flex flex-col items-start justify-center h-[80vh] px-20 text-white max-w-[690px] ml-13 mt-25">
-          {/* Subtitle */}
+        
           <p className="bg-blue-400/50 px-4 py-1 rounded-full mb-4">
             The Ultimate Stay Experience
           </p>
 
-          {/* Title */}
+          
           <h1 className="font-playfair text-5xl font-bold drop-shadow-lg leading-10  mb-4">
           Discover stays you’ll love, in places you’ll never forget
           </h1>
 
-          {/* Description */}
+          
           <p className="text-m text-gray-200 leading-relaxed">
              Unparalleled experiences await, explore stays that make every trip unforgettable — Start Your Journey now
           </p>

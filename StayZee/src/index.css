@@ -8,7 +8,7 @@
 
 
 body::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Edge */
+  display: none; 
 }
 nav {
   position: fixed !important;
