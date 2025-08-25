@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&display=swap');
+
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+nav {
+  position: fixed !important;
+  z-index: 9999 !important;
+}
