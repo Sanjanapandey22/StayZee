@@ -8,7 +8,7 @@ import {
 
 export default function About() {
   return (
-     <div className="shadow-sm shadow-gray-300 pt-10 pb-20"> 
+     <div className="shadow-sm shadow-gray-300 pt-20 pb-20"> 
       <h3 className="text-3xl font-semibold md:text-4xl  text-gray-800 mb-4 text-center ">
           But Why Choose Us??
         </h3>
@@ -28,11 +28,11 @@ export default function About() {
 
         
         <div className="w-full md:w-1/2 flex flex-col gap-6">
-        <div className="flex items-start gap-4 bg-white p-5 rounded-2xl  hover:shadow-sm transition duration-300 cursor-pointer">
-          <div className="border-2 border-rose-600 p-4 rounded-4xl">
+        <div className="flex items-start gap-4 bg-white p-5 rounded-2xl  hover:shadow-md transition duration-300 cursor-pointer">
+          <div className="border-2 border-rose-800 p-4 rounded-4xl">
             <FontAwesomeIcon
               icon={faBed}
-              className="text-rose-600 text-2xl"
+              className="text-rose-800 text-2xl"
             />
           </div>
           <div>
@@ -46,11 +46,11 @@ export default function About() {
         </div>
 
     
-        <div className="flex items-start gap-4 bg-white p-5 rounded-2xl  hover:shadow-sm transition duration-300 cursor-pointer">
-          <div className="border-2 border-rose-600 p-4 rounded-4xl">
+        <div className="flex items-start gap-4 bg-white p-5 rounded-2xl  hover:shadow-md transition duration-300 cursor-pointer">
+          <div className="border-2 border-rose-800 p-4 rounded-4xl">
             <FontAwesomeIcon
               icon={faLocationDot}
-              className="text-rose-600 text-2xl"
+              className="text-rose-800 text-2xl"
             />
           </div>
           <div>
@@ -64,11 +64,11 @@ export default function About() {
         </div>
 
         
-        <div className="flex items-start gap-4 bg-white p-5 rounded-2xl hover:shadow-sm transition duration-300 cursor-pointer">
-          <div className="border-2 border-rose-600 p-4 rounded-4xl">
+        <div className="flex items-start gap-4 bg-white p-5 rounded-2xl hover:shadow-md transition duration-300 cursor-pointer">
+          <div className="border-2 border-rose-800 p-4 rounded-4xl">
             <FontAwesomeIcon
               icon={faCalendarCheck}
-              className="text-rose-600 text-2xl"
+              className="text-rose-800 text-2xl"
             />
           </div>
           <div>

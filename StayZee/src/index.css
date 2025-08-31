@@ -14,3 +14,13 @@ nav {
   position: fixed !important;
   z-index: 9999 !important;
 }
+
+/* Hide scrollbar but keep scrolling functional */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}

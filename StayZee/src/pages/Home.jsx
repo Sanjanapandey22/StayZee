@@ -1,5 +1,5 @@
 import Hero from "../Components/Hero";
-import roomsData from "../assets/roomsdata";
+import roomsData from "./rooms";
 import HotelCard from "../Components/HotelCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -13,12 +13,12 @@ export default function Home() {
   const villaRooms = roomsData.filter((room) => room.category === "villa");
 
   return (
-    <div className="w-full overflow-x-hidden">
+    <div className="w-full overflow-x-hidden ">
       <Hero />
 
     
       <div className="">
-      <div className="flex flex-col justify-center items-center px-4 sm:px-8 md:px-16 lg:px-24">
+      <div className="flex flex-col  pt-10  pb-10 justify-center items-center px-4 sm:px-8 md:px-16 lg:px-24">
         
         <h2 className="text-3xl font-semibold text-gray-900 text-center mt-10">
           Pick What You Love
@@ -57,11 +57,11 @@ export default function Home() {
       <ExclusiveOffers/>
       </div>
     
-    <div>
+    <div className="">
       <About/>
       </div>
 
-      <div>
+      <div className="">
         <Reviews/>
       </div>
     </div>

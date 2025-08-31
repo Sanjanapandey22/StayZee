@@ -6,7 +6,7 @@ export default function Reviews() {
       name: "Aarav Sharma",
       role: "Traveler",
       image:
-        "/ReviewImg1.jpg",
+        "/ReviewImg2.jpg",
       feedback:
         "Absolutely loved our stay! The cozy rooms, stunning views, and peaceful vibe made this the perfect weekend escape.",
       rating: 5,
@@ -15,7 +15,7 @@ export default function Reviews() {
       name: "Meera Kapoor",
       role: "Content Creator",
       image:
-        "/ReviewImg2.jpg",
+        "/ReviewImg4.jpg",
       feedback:
         "The entire experience was magical — from the warm hospitality to waking up to serene mountain views every morning.",
       rating: 5,
@@ -29,19 +29,20 @@ export default function Reviews() {
         "The place is a hidden gem! Perfectly blends comfort and nature. I captured some of my best sunrise shots here.",
       rating: 4,
     },
-  ];
+  ]
 
   return (
-    <div className="   pb-20 pt-3 shadow-md shadow-gray-300">
+    <div className=" bg-gradient-to-r from-gray-400/70 via-blue-200/40 pb-20 pt-5 shadow-md shadow-gray-300">
     
-        <h3 className="text-center text-gray-800 p-10 text-3xl  font-semibold" >What Our Guests Say</h3>
+        <h3 className="text-center text-gray-800 pt-10 text-3xl  font-semibold" >What Our Guests Say</h3>
+        <p className="text-gray-600 text-center mt-3 mb-4">"Real stories — from travelers who found their perfect escape."</p>
 
-    <div className="flex flex-wrap items-center justify-center gap-8 pt-16 pb-1 ">
+    <div className="flex flex-wrap items-stretch justify-center gap-8 pt-16 pb-1 ">
            
       {testimonials.map((testimonial, index) => (
         <div
           key={index}
-          className="w-80 text-sm border border-gray-200 rounded-xl bg-white shadow-gray-500 shadow-sm hover:transition-all duration-300 relative"
+          className=" w-80  text-sm border border-gray-200 rounded-xl bg-white shadow-gray-500 shadow-sm hover:transition-all duration-300 relative"
         >
           <div className="flex flex-col items-center px-5 py-8 relative">
             {/* Profile Image */}
@@ -76,3 +77,4 @@ export default function Reviews() {
     </div>
   );
 }
+

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as faRegularHeart } from "@fortawesome/free-regular-svg-icons"; // empty heart
-import { faHeart as faSolidHeart } from "@fortawesome/free-solid-svg-icons"; // filled heart
+import { faHeart as faSolidHeart, faLocationDot } from "@fortawesome/free-solid-svg-icons"; // filled heart
 
 export default function HotelCard({ rooms }) {
   const [wishlist, setWishlist] = useState([]);
@@ -15,6 +15,7 @@ export default function HotelCard({ rooms }) {
   };
 
   return (
+  
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-10 px-4">
       {rooms.map((room) => (
         <div
@@ -24,7 +25,7 @@ export default function HotelCard({ rooms }) {
           
           <div className="relative">
             <img
-              src={room.image}
+              src={room.image[0]}
               alt={room.name}
               className="w-full h-56 object-cover"
             />
@@ -48,7 +49,9 @@ export default function HotelCard({ rooms }) {
           
           <div className="p-4">
             <h3 className="text-xl font-semibold text-gray-900">{room.name}</h3>
-            <p className="text-gray-600">{room.location}</p>
+            <p className="text-gray-600">
+               <FontAwesomeIcon icon={faLocationDot} />
+               {room.location}</p>
             <p>{room.price}</p>
             <div>
               {"⭐".repeat(Math.round(room.rating))}
@@ -57,6 +60,7 @@ export default function HotelCard({ rooms }) {
           </div>
         </div>
       ))}
+   
     </div>
   );
 }
