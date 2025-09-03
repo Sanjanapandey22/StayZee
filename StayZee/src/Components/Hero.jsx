@@ -39,25 +39,25 @@ export default function Hero() {
 
         {/* Hero Text + Form */}
         <div className="">
-        <div className="flex flex-col items-start justify-center px-6 sm:px-8 md:px-12 lg:px-20 text-white lg:max-w-[690px] mx-auto lg:ml-16  sm:mt-40 md:mt-20 lg:mt-50">
+        <div className="flex flex-col items-start justify-center px-6 sm:px-8 md:px-12 lg:px-20 text-white lg:max-w-[690px] mx-auto lg:ml-16 md:mt-60 mt-40 ">
         
           <p className="bg-blue-400/50 px-4 w-fit py-2 rounded-full mb-4 lg:text-md sm:text-sm">
             The Ultimate Stay Experience
           </p>
 
           
-          <h1 className="font-playfair lg:text-5xl md:text-4xl sm:text-3xl font-bold drop-shadow-lg lg:leading-10 sm:leading-3 lg:mb-4 sm:mb-2">
+          <h1 className="font-playfair lg:text-5xl text-4xl md:max-w-sm lg:max-w-2xl font-bold drop-shadow-lg lg:leading-10 leading-8 lg:mb-4 mb-3">
             Discover stays you’ll love, in places you’ll never forget
           </h1>
 
           
-          <p className="text-gray-200 lg:leading-relaxed sm:leading-1 lg:text-lg sm:text-[10px]">
+          <p className="text-gray-200 lg:leading-relaxed md:max-w-sm lg:max-w-2xl sm:leading-1 md:leading-5 mt-1 lg:text-[15px] sm:text-[10px] md:text-[16px]">
             Unparalleled experiences await — explore stays that make every trip unforgettable.
             Start your journey now.
           </p>
 
           
-          <form className="bg-white text-gray-800 rounded-lg px-6 py-6 mt-5 flex flex-col md:flex-row lg:items-start md:items-center sm:items-center gap-4 lg:max-w-5xl sm:max-w-xl ">
+          <form className="bg-white text-gray-800 rounded-lg px-6 py-6 mt-7 lg:mt-5   flex flex-col md:flex-row items-start lg:ml-0 m-auto gap-4 lg:max-w-5xl sm:max-w-xl md:max-w-2xl">
             {/* Destination */}
             <div>
               <div className="flex items-center gap-2">
@@ -68,7 +68,7 @@ export default function Hero() {
                 list="destinations"
                 id="destinationInput"
                 type="text"
-                className="rounded border border-gray-200 px-3 py-1.5 mt-1.5 text-sm outline-none"
+                className="rounded border border-gray-200 lg:px-3 md:px-[0.5px] py-1.5 mt-1.5 text-sm outline-none"
                 placeholder="Type here"
                 required
               />
@@ -88,7 +88,7 @@ export default function Hero() {
               <input
                 id="checkIn"
                 type="date"
-                className="rounded border border-gray-200 px-3 py-1.5 mt-1.5 text-sm outline-none"
+                className="rounded border border-gray-200 lg:px-3 md:px-0.5 py-1.5 mt-1.5 text-sm outline-none"
               />
             </div>
 
@@ -101,7 +101,7 @@ export default function Hero() {
               <input
                 id="checkOut"
                 type="date"
-                className="rounded border border-gray-200 px-3 py-1.5 mt-1.5 text-sm outline-none"
+                className="rounded border border-gray-200 lg:px-3  md:px-0.5 py-1.5 mt-1.5 text-sm outline-none"
               />
             </div>
 
@@ -113,7 +113,7 @@ export default function Hero() {
                 max={4}
                 id="guests"
                 type="number"
-                className="rounded border border-gray-200 px-3 py-1.5 mt-1.5 text-sm outline-none max-w-16"
+                className="rounded border border-gray-200 lg:px-3 py-1.5 md:px-0.5 mt-1.5 text-sm outline-none max-w-16"
                 placeholder="0"
               />
             </div>

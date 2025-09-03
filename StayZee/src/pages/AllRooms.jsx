@@ -31,7 +31,7 @@ export default function AllRooms() {
     });
   };
 
-  const clearFilters = () => {
+  const clearFilters  = () => {  
     setFilters({
       price: 40000,
       type: [],
@@ -48,7 +48,9 @@ export default function AllRooms() {
     Airbnb: "bg-purple-300/50 text-white",
   };
 
+  const [showFilters, setShowFilters] = useState(false);
 
+  
   const filteredRooms = roomsData.filter((room) => {
     if (room.price > filters.price) return false;
     if (filters.type.length > 0 && !filters.type.includes(room.type)) return false;
@@ -57,15 +59,17 @@ export default function AllRooms() {
     return true;
   });
 
-  return (
-    <div>
-      <div className="flex flex-col md:flex-row md:gap-10 px-5 md:px-16 lg:px-24 xl:px-32 bg-gray-50 md:pt-28">
-        
-        {/* Sidebar Filters */}
-        <div className="hidden md:block md:w-1/4 bg-white shadow-md rounded-2xl p-6 sticky top-28 max-h-[calc(100vh-120px)] overflow-y-auto scrollbar-hide">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">Filters</h2>
+
+
+
+
+    const Filter = () => {
+      return(
+      <div className=" bg-white shadow-md rounded-2xl p-6">
+          <button  className="text-xl font-semibold text-gray-900 mb-4 lg:block hidden">Filters</button>
+          <span></span>
           <div className="text-xs flex justify-between mb-4">
-            <button onClick={clearFilters} className="text-rose-800 font-semibold">
+            <button onClick={(clearFilters)} className="text-rose-800 font-semibold">
               Clear All
             </button>
           </div>
@@ -90,16 +94,16 @@ export default function AllRooms() {
           </div>
 
           {/* Stay Type */}
-          <div className="mb-6">
+          <div className="mb-6 sm:mb-3">
             <h3 className="text-gray-700 font-medium mb-2">Stay Type</h3>
-            <div className="space-y-2">
+            <div className="space-y-2 ">
               {["Hotel", "Villa", "Airbnb"].map((type) => (
-                <label key={type} className="flex items-center gap-2 text-gray-600 cursor-pointer">
+                <label key={type} className="flex flex-col items-center gap-5  group-[sm:flex flex-row items-center] text-gray-600 cursor-pointer">
                   <input
                     type="checkbox"
                     checked={filters.type.includes(type)}
                     onChange={() => handleCheckbox("type", type)}
-                    className="accent-rose-800 w-4 h-4"
+                    className="accent-rose-800 w-4 h-4  "
                   />
                   {type}
                 </label>
@@ -110,9 +114,9 @@ export default function AllRooms() {
           {/* Location Filter */}
           <div className="mb-6">
             <h3 className="text-gray-700 font-medium mb-2">Location</h3>
-            <div className="space-y-2 max-h-40 overflow-y-auto pr-1">
+            <div className="space-y-2 max-h-40 overflow-y-auto pr-1 ">
               {locations.map((loc) => (
-                <label key={loc} className="flex items-center gap-2 text-gray-600 cursor-pointer">
+                <label key={loc} className="flex items-center  gap-5 text-gray-600 cursor-pointer">
                   <input
                     type="checkbox"
                     checked={filters.location.includes(loc)}
@@ -146,11 +150,67 @@ export default function AllRooms() {
             </div>
           </div>
         </div>
+    )}
+
+    
+
+  return (
+    <div>
+      <div className="flex flex-col lg:flex-row md:gap-10 px-5 md:px-16 lg:px-24 xl:px-32 bg-gray-50 pt-2 lg:pt-24   z-10">
+
+        
+        {/* Sidebar Filters */}
+        <div className="hidden lg:block md:w-1/4 sticky top-28 max-h-[calc(100vh-120px)] overflow-y-auto scrollbar-hide items-start">
+    
+           <Filter/>
+        </div>
+
+
+        {/* Filters Button for Mobile */}
+<div className="lg:hidden  flex justify-between items-center bg-transparent shadow-md border  border-gray-200 rounded-lg px-5 w-80 md:w-100 m-auto py-3">
+  <h2 className="text-lg font-semibold text-gray-800">Filters</h2>
+  <button
+    onClick={() => setShowFilters((prev) => !prev)}  
+    className="text-rose-800 font-semibold hover:underline"
+  >
+    {showFilters ? '✕' : 'SHOW'}
+  </button>
+</div>
+
+
+{showFilters && (
+  
+  
+    <div className="mt-0 m-auto mb-5 bg-white rounded-3xl shadow-lg w-[90%] sm:w-[70%] md:w-[50%] lg:hidden max-h-[90vh] flex flex-col animate-slideup">
+      
+    
+      <div className="flex justify-between items-center p-4 border-b flex-shrink-0 sticky  bg-white z-10">
+        
+       
+      </div>
+
+    
+      <div className="flex-1 overflow-y-auto p-4">
+        <Filter />
+      </div>
+
+    
+      <div className="p-4 border-t flex-shrink-0 sticky bottom-0 bg-white z-10">
+        <button
+          onClick={() => setShowFilters(false)}
+          className="w-full bg-rose-800 text-white py-3 rounded-lg hover:bg-black transition"
+        >
+          Apply Filters
+        </button>
+      </div>
+    </div>
+  
+)}
 
         {/* Rooms Section */}
         <div className="flex-1">
           {/* Heading */}
-          <div className="flex flex-col items-center text-center mb-12">
+          <div className="flex flex-col items-center text-center lg:mt-2 mt-5 mb-12">
             <h1 className="text-3xl md:text-5xl font-semibold text-gray-800">
               Find Your Perfect Stay
             </h1>
@@ -159,6 +219,8 @@ export default function AllRooms() {
               to vibrant city escapes, crafted for every kind of traveler.
             </p>
           </div>
+
+
 
           {/* Rooms Grid */}
           {filteredRooms.length === 0 ? (

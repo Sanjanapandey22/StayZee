@@ -31,7 +31,7 @@ export default function ExclusiveOffers() {
   ];
 
   return (
-    <div className="w-full px-6 md:px-16 py-10 mt-10 pb-20 bg-gradient-to-b from-blue-300/60 via-purple-300/60 backdrop-blur-lg  shadow-sm">
+    <div className="w-full px-6 md:px-16 py-20 mt-10 pb-20 bg-gradient-to-b from-purple-200/60 via-blue-300/60 backdrop-blur-lg  shadow-sm">
       
       <div className="flex justify-between items-center mb-8">
         <div>
@@ -51,17 +51,17 @@ export default function ExclusiveOffers() {
       </div>
 
   
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="flex flex-wrap  gap-8 ">
         {exclusiveOffers.map((offer) => (
           <div
             key={offer._id}
-            className="relative group rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
+            className="relative group rounded-2xl lg:w-[430px] md:w-[300px] md:m-auto overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
           >
             
             <img
               src={offer.image}
               alt={offer.title}
-              className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
+              className="w-full h-72 object-cover  group-hover:scale-110 transition-transform duration-500"
             />
 
             
@@ -74,7 +74,7 @@ export default function ExclusiveOffers() {
 
         
             <div className="absolute bottom-6 left-6 right-6 text-white">
-              <h3 className="text-xl md:text-2xl font-semibold mb-1">
+              <h3 className="text-xl md:text-xl font-semibold mb-1">
                 {offer.title}
               </h3>
               <p className="text-sm md:text-base opacity-90">

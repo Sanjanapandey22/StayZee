@@ -1,7 +1,6 @@
 import { faWifi, faSwimmingPool, faUtensils, faSpa, faCar, faTv, faSnowflake, faShuttleVan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-
 const roomsData = [
   // 🏨 Hotels
   {
@@ -11,6 +10,7 @@ const roomsData = [
     category: "hotel",
     price: "₹18,000 / night",
     location: "Dubai, UAE",
+    hostedBy: "Skyline Luxury Hotels",   // ✅ Added
     image: [
       "/hotelimg1.1.webp",
       "/hotelimg1.2.webp",
@@ -35,6 +35,7 @@ const roomsData = [
     category: "hotel",
     price: "₹14,500 / night",
     location: "Goa, India",
+    hostedBy: "Seaview Hospitality Group",   // ✅ Added
     image: [
       "/hotelimg2.1.webp",
       "/hotelimg2.2.webp",
@@ -59,6 +60,7 @@ const roomsData = [
     category: "hotel",
     price: "₹12,800 / night",
     location: "Shimla, India",
+    hostedBy: "Mountain Escape Group",   // ✅ Added
     image: [
       "/hotelimg3.1.webp",
       "/hotelimg3.2.webp",
@@ -83,6 +85,7 @@ const roomsData = [
     category: "hotel",
     price: "₹10,500 / night",
     location: "Bangalore, India",
+    hostedBy: "City Lights Group",   // ✅ Added
     image: [
       "/hotelimg4.1.webp",
       "/hotelimg4.2.webp",
@@ -109,7 +112,8 @@ const roomsData = [
     category: "villa",
     price: "₹25,000 / night",
     location: "Bali, Indonesia",
-   image: [
+    hostedBy: "Arjun Mehta",   // ✅ Individual host
+    image: [
       "/hotelimg5.1.avif",
       "/hotelimg5.2.avif",
       "/hotelimg5.3.avif",
@@ -133,7 +137,8 @@ const roomsData = [
     category: "villa",
     price: "₹7,500 / night",
     location: "Manali, India",
-       image: [
+    hostedBy: "Kavya Sharma",   
+    image: [
       "/hotelimg6.1.avif",
       "/hotelimg6.2.avif",
       "/hotelimg6.3.avif",
@@ -157,7 +162,9 @@ const roomsData = [
     category: "villa",
     price: "₹32,000 / night",
     location: "Maldives",
-       image: [
+    hostedBy: "Rohan Kapoor",  
+  
+  image: [ 
       "/hotelimg7.1.avif",
       "/hotelimg7.2.avif",
       "/hotelimg7.3.avif",
@@ -181,11 +188,12 @@ const roomsData = [
     category: "villa",
     price: "₹9,000 / night",
     location: "Lonavala, India",
-      image: [
+    hostedBy: "Sneha Verma",   
+    image: [
       "/hotelimg8.1.avif",
       "/hotelimg8.2.avif",
       "/hotelimg8.3.avif",
-      "/hotelimg8.4.avif",
+      "/hotelimg8.4.webp",
     ],
     rating: 4.8,
     reviews: 67,

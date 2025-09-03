@@ -4,17 +4,20 @@ import roomsData from "./rooms";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faHeart as faRegularHeart,
+  faHeart as faSolidHeart,
   faStar,
+  faHeart,
   faLocationDot,
   faArrowLeft,
   faShareNodes,
   faCalendar,
   faHome,
   faCheckCircle,
-  faHeart
+  faUser
 } from "@fortawesome/free-solid-svg-icons";
-import { faHeart as faSolidHeart } from "@fortawesome/free-regular-svg-icons";
+import { faHeart as faRegularHeart } from "@fortawesome/free-regular-svg-icons";
+import Footer from "../Components/Footer";
+import Navbar from "../Components/Navbar";
 
 export default function RoomDetails() {
   const { id } = useParams();
@@ -43,13 +46,15 @@ export default function RoomDetails() {
   }
 
   return (
-    <div className="px-5 md:px-16 lg:px-24 xl:px-32 py-10 bg-gray-50 min-h-screen">
+    <div>
+      <Navbar  />
+    <div className="px-5 md:px-16 lg:px-24 xl:px-32 py-10 mt-18 bg-gray-50 min-h-screen">
       
       <button
         onClick={() => navigate(-1)}
-        className="flex items-center gap-2 text-gray-700 hover:text-rose-800 mb-6"
+        className="flex items-center gap-2  text-gray-700 hover:text-rose-800 mb-6"
       >
-        <FontAwesomeIcon icon={faArrowLeft} />
+        <FontAwesomeIcon icon={faArrowLeft}  className="text-xl"/>
         Back
       </button>
 
@@ -60,7 +65,7 @@ export default function RoomDetails() {
         </h1>
         <div className="flex items-center gap-6">
         
-          <button onClick={() => toggleWishlist(room.id)} className="flex items-center gap-2">
+           <button onClick={() => toggleWishlist(room.id)} className="flex items-center gap-2">
             <FontAwesomeIcon
               icon={wishlist.includes(room.id) ? faSolidHeart : faRegularHeart}
               className={`text-xl transition-colors duration-300 ${
@@ -134,7 +139,7 @@ export default function RoomDetails() {
       </div>
 
       
-         <form className="bg-gray-100 text-gray-800 rounded-lg px-6 py-6 mt-10 gap-10 flex flex-col md:flex-row items-center lg:max-w-3xl sm:max-w-xl ">
+         <form className="bg-gray-100 text-gray-800 rounded-lg px-6 py-6 mt-10 gap-10 flex flex-col md:flex-row items-center justify-between lg:max-w-4xl sm:max-w-xl  shadow-md">
                     
                     <div>
                       <div className="flex items-center gap-2">
@@ -147,7 +152,8 @@ export default function RoomDetails() {
                         className="rounded border bg-white border-gray-200 px-3 py-1.5 mt-1.5 text-sm outline-none"
                       />
                     </div>
-        
+                   
+                    <div className="hidden md:block border-l h-12 mx-auto text-gray-500"></div>
                     
                     <div>
                       <div className="flex items-center gap-2">
@@ -161,7 +167,8 @@ export default function RoomDetails() {
                       />
                     </div>
       
-                    
+                     <div className="hidden md:block border-l h-12 mx-auto text-gray-500"></div>
+
                     <div className="flex md:flex-col max-md:gap-2 max-md:items-center">
                       <label htmlFor="guests">Guests</label>
                       <input
@@ -173,24 +180,88 @@ export default function RoomDetails() {
                         placeholder="0"
                       />
                     </div>
-        
+         
+                     <div className="hidden md:block border-l h-12 mx-auto text-gray-500"></div>
                     
                     <button className="flex items-center justify-center gap-1 rounded-md bg-rose-800 py-3 px-4 text-white  cursor-pointer max-md:w-full max-md:py-2">
                   
                       <span>Check Availability</span>
                     </button>
                   </form>
-                
-      
 
-    
+
+
+ 
+        
       <div className="mt-8 flex justify-end">
         <button className="px-8 py-3 bg-rose-800 hover:bg-black text-white text-lg font-medium rounded-full shadow-md transition">
           Book Now
         </button>
       </div>
 
-     
-    </div>
+     <div className="flex flex-col md:w-1/2 gap-6 mt-13">
+       <div className=" flex items-center gap-4">
+        <FontAwesomeIcon icon={faHome} className="text-rose-800 text-lg py-2.5 px-2 rounded-full bg-gray-200" />
+        
+        <div className="flex flex-col">
+        <p className="font-semibold">Clean & Safe Stay</p>
+        <p  className="text-gray-700">A well-maintained and hygienic space just for you.</p>
+        </div>
+       </div>
+              <div className="flex items-center gap-4">
+
+        <FontAwesomeIcon icon={faCheckCircle} className="text-rose-800 text-lg py-2.5 px-2 rounded-full bg-gray-200" />
+        <div className="flex flex-col">
+       <p className="font-semibold">Enhanced Cleaning</p>
+       <p className="text-gray-700">This host follows Staybnb's strict cleaning standards.</p>
+       </div>
+       </div>
+             <div className=" flex items-center gap-4">
+
+        <FontAwesomeIcon icon={faLocationDot} className="text-rose-800 text-lg py-2.5 px-2 rounded-full bg-gray-200" />
+        <div className="flex flex-col">
+        <p className="font-semibold">Excellent Location</p>
+        <p  className="text-gray-700">90% of guests rated the location 5 stars.</p>
+        </div>
+       </div>
+         <div className=" flex items-center gap-4">
+
+        <FontAwesomeIcon icon={faHeart} className="text-rose-800 text-lg py-2.5 px-2 rounded-full bg-gray-200" />
+       <div className="flex flex-col">
+        <p className="font-semibold">Smooth Check-In</p>
+        <p  className="text-gray-700">100% of guests gave check-in a 5-star rating.</p>
+        </div>
+       </div>
+
+        <div className="border-[0.2px] border-stone-400  max-w-4xl mt-10 mb-6 "></div>
+        
+        <div className="max-w-5xl">
+          <p className="text-md text-gray-800 leading-6 ">Guests will be allocated on the ground floor according to availability. You get a comfortable Two bedroom apartment has a true city feeling. The price quoted is for two guest, at the guest slot please mark the number of guests to get the exact price for groups. The Guests will be allocated ground floor according to availability. You get the comfortable two bedroom apartment that has a true city feeling.</p>
+        </div>
+
+        <div className="border-[0.2px] border-stone-400  max-w-4xl mt-10 mb-6 "></div>
+
+
+      <div className="flex items-center gap-5"> 
+      <FontAwesomeIcon icon={faUser}  className="bg-gray-300 px-3 py-4 text-3xl rounded-full"/>
+      <div className="">
+        <p className="text-xl font-semibold"> Hosted By {room.hostedBy}</p>
+        <p> {"⭐".repeat(Math.round(room.rating))}   {room.reviews}+ reviews</p>
+   
+         
+      </div>
+      </div>
+       <div className="mt-5">
+                <button className="px-8 py-3 bg-rose-800 hover:bg-black text-white text-lg font-medium rounded-lg shadow-md transition">
+          Contact Now
+        </button>
+        </div>
+     </div>
+
+    
+     </div>
+   
+     <Footer/>
+     </div>
   );
 }

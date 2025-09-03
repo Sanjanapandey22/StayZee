@@ -8,7 +8,7 @@ import {
 
 export default function About() {
   return (
-     <div className="shadow-sm shadow-gray-300 pt-20 pb-20"> 
+     <div className="shadow-md shadow-gray-300 pt-20 pb-20"> 
       <h3 className="text-3xl font-semibold md:text-4xl  text-gray-800 mb-4 text-center ">
           But Why Choose Us??
         </h3>

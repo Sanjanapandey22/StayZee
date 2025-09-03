@@ -6,14 +6,18 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import ExclusiveOffers from "../Components/ExclusiveOffers";
 import About from "../Components/About";
 import Reviews from "../Components/Reviews";
+import { useNavigate } from "react-router-dom";
+import JoinNowSection from "../Components/JoinNowSection";
 
 export default function Home() {
   // Separate hotel and villa data
   const hotelRooms = roomsData.filter((room) => room.category === "hotel");
   const villaRooms = roomsData.filter((room) => room.category === "villa");
 
+  const navigate = useNavigate();
+
   return (
-    <div className="w-full overflow-x-hidden ">
+    <div id="home" className="w-full overflow-x-hidden ">
       <Hero />
 
     
@@ -39,7 +43,9 @@ export default function Home() {
         </div>
          <div className="flex text-xl mt-10 text-center items-center gap-4">
            <p>Explore More</p> 
-           <FontAwesomeIcon icon={faArrowRight}  className="text-xl py-2.5 px-2 border-2 text-gray-400 rounded-full"/></div>
+           <FontAwesomeIcon onClick={() => navigate('/rooms')} icon={faArrowRight} 
+            className="text-xl py-2.5 px-2 border-2 text-gray-400 rounded-full
+            transition-transform duration-300 hover:translate-x-1 "/></div>
 
       
         <div className="w-full mt-5">
@@ -48,22 +54,32 @@ export default function Home() {
           </h2>
           <HotelCard rooms={villaRooms} />
         </div>
-         <div className="flex text-xl mt-10 text-center items-center gap-4">
-           <p>Explore More</p> 
-           <FontAwesomeIcon icon={faArrowRight}  className="text-xl py-2.5 px-2 border-2 text-gray-400 rounded-full"/></div>
-       </div>
+       <div className="flex text-xl mt-10 text-center items-center gap-4 cursor-pointer">
+  <p>Explore More</p>
+  <FontAwesomeIcon
+    icon={faArrowRight}
+    className="text-xl py-2.5 px-2 border-2 text-gray-400 rounded-full 
+               transition-transform duration-300 
+               hover:translate-x-1 "
+  />
+</div>
+
       </div>
       <div className="mt-10 ">
       <ExclusiveOffers/>
       </div>
     
-    <div className="">
+    <div>
       <About/>
-      </div>
-
-      <div className="">
+    </div>
+      
+      
         <Reviews/>
-      </div>
+      
+     <JoinNowSection/>
+
+      
+    </div>
     </div>
   );
 }

@@ -32,22 +32,22 @@ export default function Reviews() {
   ]
 
   return (
-    <div className=" bg-gradient-to-r from-gray-400/70 via-blue-200/40 pb-20 pt-5 shadow-md shadow-gray-300">
+    <div className=" bg-gradient-to-b from-purple-200/60 via-blue-300/60 pb-25 pt-6 shadow-md">
     
         <h3 className="text-center text-gray-800 pt-10 text-3xl  font-semibold" >What Our Guests Say</h3>
         <p className="text-gray-600 text-center mt-3 mb-4">"Real stories — from travelers who found their perfect escape."</p>
 
-    <div className="flex flex-wrap items-stretch justify-center gap-8 pt-16 pb-1 ">
+    <div className="flex flex-wrap items-stretch justify-center gap-10 pt-16 pb-1 ">
            
       {testimonials.map((testimonial, index) => (
         <div
           key={index}
-          className=" w-80  text-sm border border-gray-200 rounded-xl bg-white shadow-gray-500 shadow-sm hover:transition-all duration-300 relative"
+          className=" w-80  text-sm border border-gray-200 rounded-xl mt-5 bg-white shadow-gray-500 shadow-sm hover:transition-all duration-300 relative"
         >
           <div className="flex flex-col items-center px-5 py-8 relative">
             {/* Profile Image */}
             <img
-              className="h-24 w-24 absolute -top-12 rounded-full  shadow-md object-cover"
+              className="h-24 w-24 absolute -top-12 rounded-full border-white border-4 shadow-xl object-cover"
               src={testimonial.image}
               alt={testimonial.name}
             />
