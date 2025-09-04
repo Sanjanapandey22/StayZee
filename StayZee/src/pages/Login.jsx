@@ -36,11 +36,18 @@ export default function Login() {
         />
 
       
-        <div className="text-right py-4">
+     {signState === 'login' ?  <div className="text-right py-4">
           <a className="text-blue-600 underline" href="#">
             Forgot Password?
-          </a>
-        </div>
+          </a></div> :  <input
+          id="password"
+          className="w-full bg-transparent border mt-1 border-gray-500/30 outline-none rounded-full py-2.5 px-4"
+          type="password"
+          placeholder="Confirm password"
+          required
+        />
+
+        } 
 
       
         <button
