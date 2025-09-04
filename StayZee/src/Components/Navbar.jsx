@@ -102,7 +102,7 @@ export default function Navbar() {
       <Link to='/wishlist'> <FontAwesomeIcon icon={faHeart} className="text-rose-800" /></Link> 
           <FontAwesomeIcon icon={faUser}
             onClick={() => setShowLogin(true)}
-            className="cursor-pointer" />
+            className="cursor-pointer mt-1" />
         </div>
       </div>
 

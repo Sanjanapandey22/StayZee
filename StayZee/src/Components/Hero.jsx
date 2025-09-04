@@ -51,7 +51,7 @@ export default function Hero() {
           </h1>
 
           
-          <p className="text-gray-200 lg:leading-relaxed md:max-w-sm lg:max-w-2xl sm:leading-1 md:leading-5 mt-1 lg:text-[15px] sm:text-[10px] md:text-[16px]">
+          <p className="text-gray-200 lg:leading-relaxed md:max-w-sm lg:max-w-2xl sm:leading-1 md:leading-5 mt-1 lg:text-[15px] sm:text-[10px] md:text-lg">
             Unparalleled experiences await — explore stays that make every trip unforgettable.
             Start your journey now.
           </p>
