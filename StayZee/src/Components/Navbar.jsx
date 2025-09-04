@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import Login from "../pages/Login";
 
 export default function Navbar() {
@@ -91,15 +91,15 @@ export default function Navbar() {
        </div>
       {/* Right Side */}
       <div className="hidden md:flex items-center gap-6">
-        <h2 className={`${isScrolled || !isHome ? "text-gray-800" : "text-white"}`}>
+       <Link to={'/profile'}> <h2 className={`${isScrolled || !isHome ? "text-gray-800" : "text-white"}`}>
           Your Bookings
-        </h2>
+        </h2></Link>  
         <div
           className={`flex space-x-4 text-2xl ${
             isScrolled || !isHome ? "text-rose-800" : "text-white"
           }`}
         >
-          <FontAwesomeIcon icon={faHeart} className="text-rose-800" />
+      <Link to='/wishlist'> <FontAwesomeIcon icon={faHeart} className="text-rose-800" /></Link> 
           <FontAwesomeIcon icon={faUser}
             onClick={() => setShowLogin(true)}
             className="cursor-pointer" />
@@ -150,28 +150,33 @@ export default function Navbar() {
 
         <h2>Your Bookings</h2>
         <div className="flex space-x-4 text-2xl text-red-800">
-          <FontAwesomeIcon icon={faHeart} />
+        <Link to='/wishlist'><FontAwesomeIcon icon={faHeart} /></Link>  
           <FontAwesomeIcon icon={faUser} />
         </div>
       </div>
-
-      {showLogin && (
-    
-        <div className="fixed h-screen inset-0  bg-black/70 bg-opacity-40 flex justify-center  items-center z-[100]">
-         <div className= "md:absolute md:top-10 shadow-lg p-8 w-[400px] ">
-             
-           <button
+{showLogin && (
+  <div className="fixed inset-0 bg-black/70 flex justify-center h-screen items-center z-[100] px-4">
+    <div className="relative shadow-lg bg-white rounded-2xl p-4 pt-2 pb-2 w-full max-w-[350px] flex flex-col items-center">
+      
+      
+      <button
         onClick={() => setShowLogin(false)}
-        className="absolute  justify-center  text-white hover:text-gray-500 text-xl"
+        className="absolute top-3 right-3 text-gray-400 hover:text-gray-600 text-xl"
       >
         ✕
       </button>
-         <h2 className="text-3xl text-white font-semibold mb-4 text-center">Login</h2>
-            <Login/>
-         </div>
-        </div>
-        
-      )}
-    </nav>
-  );
-}
+
+      
+      <div className="flex justify-center items-center bg-rose-800 w-16 h-16 rounded-full shadow-md -mt-10">
+        <FontAwesomeIcon icon={faUser} className="text-white text-2xl" />
+      </div>
+
+      
+      <div className="mt-6 w-full">
+        <Login />
+      </div>
+    </div>
+  </div>
+)}
+</nav>
+  )}

@@ -6,13 +6,15 @@ import { faHeart as faSolidHeart, faLocationDot } from "@fortawesome/free-solid-
 export default function HotelCard({ rooms }) {
   const [wishlist, setWishlist] = useState([]);
 
-  const toggleWishlist = (id) => {
-    if (wishlist.includes(id)) {
-      setWishlist(wishlist.filter((item) => item !== id));
-    } else {
-      setWishlist([...wishlist, id]);
-    }
-  };
+ const toggleWishlist = (roomId) => {
+  setWishlist((prevWishlist) => {
+    const updated = prevWishlist.includes(roomId)
+      ? prevWishlist.filter((id) => id !== roomId)
+      : [...prevWishlist, roomId];
+    localStorage.setItem("wishlist", JSON.stringify(updated));
+    return updated;
+  });
+};
 
   return (
   

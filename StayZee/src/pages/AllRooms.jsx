@@ -16,11 +16,15 @@ export default function AllRooms() {
   const [wishlist, setWishlist] = useState([]);
   const navigate = useNavigate();
 
-  const toggleWishlist = (id) => {
-    setWishlist((prev) =>
-      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
-    );
-  };
+ const toggleWishlist = (roomId) => {
+  setWishlist((prevWishlist) => {
+    const updated = prevWishlist.includes(roomId)
+      ? prevWishlist.filter((id) => id !== roomId)
+      : [...prevWishlist, roomId];
+    localStorage.setItem("wishlist", JSON.stringify(updated));
+    return updated;
+  });
+};
 
   const handleCheckbox = (category, value) => {
     setFilters((prev) => {
