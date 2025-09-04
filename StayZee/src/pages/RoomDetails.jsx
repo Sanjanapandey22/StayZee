@@ -24,7 +24,17 @@ export default function RoomDetails() {
   const navigate = useNavigate();
   const room = roomsData.find((room) => room.id === parseInt(id));
 
+const [wishlist, setWishlist] = useState([]);
 
+ const toggleWishlist = (roomId) => {
+  setWishlist((prevWishlist) => {
+    const updated = prevWishlist.includes(roomId)
+      ? prevWishlist.filter((id) => id !== roomId)
+      : [...prevWishlist, roomId];
+    localStorage.setItem("wishlist", JSON.stringify(updated));
+    return updated;
+  });
+};
 
 
   if (!room) {
