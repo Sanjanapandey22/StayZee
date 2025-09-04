@@ -27,13 +27,19 @@ export default function Login() {
           placeholder="Enter your email"
           required
         />
-        <input
+      {signState === 'login' ? <input
           id="password"
           className="w-full bg-transparent border mt-1 border-gray-500/30 outline-none rounded-full py-2.5 px-4"
           type="password"
           placeholder="Enter your password"
           required
-        />
+        /> : <input
+          id="password"
+          className="w-full bg-transparent border mt-1 border-gray-500/30 outline-none rounded-full py-2.5 px-4"
+          type="password"
+          placeholder="Create a password"
+          required
+        /> }  
 
       
      {signState === 'login' ?  <div className="text-right py-4">
@@ -41,7 +47,7 @@ export default function Login() {
             Forgot Password?
           </a></div> :  <input
           id="password"
-          className="w-full bg-transparent border mt-1 border-gray-500/30 outline-none rounded-full py-2.5 px-4"
+          className="w-full bg-transparent border  border-gray-500/30 outline-none rounded-full py-2.5 px-4 mt-2"
           type="password"
           placeholder="Confirm password"
           required
